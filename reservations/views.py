@@ -12,7 +12,7 @@ def home(request):
 
     # sadece çalışma odaları
     study_rooms = Room.objects.filter(room_type='study', is_active=True)
-    total_rooms = study_rooms.count()
+    total_rooms = study_rooms.count()  # sadece çalışma odaları için rezervasyonları say
 
     # bugün dolu olan odalar (unique)
     occupied_rooms = Reservation.objects.filter(
@@ -23,6 +23,8 @@ def home(request):
 
     # boş oda sayısı
     available_rooms = total_rooms - occupied_rooms
+
+
 
     # kullanıcı sayısı
     user_count = User.objects.count()
