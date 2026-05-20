@@ -22,7 +22,9 @@ def home(request):
     ).values_list('room', flat=True).distinct().count()
 
     # boş oda sayısı
-    available_rooms = total_rooms 
+    
+    available_rooms = total_rooms + occupied_rooms 
+
 
 
 
