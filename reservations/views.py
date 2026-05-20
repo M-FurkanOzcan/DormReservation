@@ -22,18 +22,23 @@ def home(request):
     ).values_list('room', flat=True).distinct().count()
 
     # boş oda sayısı
+    
     available_rooms = total_rooms + occupied_rooms 
+
 
 
 
     # kullanıcı sayısı
     user_count = User.objects.count()
 
+    
+
     context = {
         'total_rooms': total_rooms,
         'occupied_rooms': occupied_rooms,
         'available_rooms': available_rooms,
         'user_count': user_count,
+        
     }
 
     return render(request, 'home.html', context)
