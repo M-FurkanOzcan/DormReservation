@@ -14,6 +14,9 @@ class Room(models.Model):
 
     def __str__(self):
         return self.name
+    class Meta:
+        verbose_name = "Dorm Facility"
+        verbose_name_plural = "Dorm Facilities"
 
 
 class TimeSlot(models.Model):

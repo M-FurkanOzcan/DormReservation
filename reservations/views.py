@@ -27,11 +27,14 @@ def home(request):
     # kullanıcı sayısı
     user_count = User.objects.count()
 
+    
+
     context = {
         'total_rooms': total_rooms,
         'occupied_rooms': occupied_rooms,
         'available_rooms': available_rooms,
         'user_count': user_count,
+        
     }
 
     return render(request, 'home.html', context)
