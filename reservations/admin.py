@@ -5,7 +5,7 @@ from .models import Room, TimeSlot, Reservation
 @admin.register(Room)
 class RoomAdmin(admin.ModelAdmin):
     list_display = ('name', 'room_type', 'is_active')
-    list_filter = ('room_type', 'is_active')
+    list_filter = ('room_type', 'is_active') # Add filter for active rooms
 
 
 @admin.register(TimeSlot)
